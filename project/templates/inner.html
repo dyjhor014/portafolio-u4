@@ -1,0 +1,55 @@
+{% extends 'base2.html' %}
+{% block main %}
+{% load static %}
+<main id="main">
+  <!-- ======= Breadcrumbs ======= -->
+  <section class="breadcrumbs">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Página de inserción de datos - Portafolio</h2>
+        <ol>
+          <li><a href="index.html">home</a></li>
+          <li>inner</li>
+        </ol>
+      </div>
+
+    </div>
+  </section>
+  <!-- End Breadcrumbs -->
+
+  <section class="inner-page">
+    <div class="container">
+      <form class="row g-3" action="" method="post">
+        {% csrf_token %}
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Foto</label>
+          <input type="url" class="form-control" id="photo" name="photo" placeholder="Ingresa url de la imagen" required autocomplete="off">
+        </div>
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Titulo del proyecto</label>
+          <input type="text" class="form-control" id="title" name="title" placeholder="Ingresa el titulo del proyecto" required autocomplete="off">
+        </div>
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="Ingresa la descripcion de tu proyecto" name="description" id="description" required autocomplete="off"></textarea>
+          <label for="floatingTextarea">Descripcion del proyecto</label>
+        </div>
+        <div class="col-12">
+          <label for="inputAddress2" class="form-label">Tags</label>
+          <input type="text" class="form-control" id="tags" name="tags" placeholder="Ingresa las etiquetas" required autocomplete="off">
+        </div>
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">URL Github</label>
+          <input type="url" class="form-control" id="url" name="url" placeholder="Ingresa url del proyecto en github" required autocomplete="off">
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Agregar</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+<!-- End #main -->
+
+{% endblock %}
