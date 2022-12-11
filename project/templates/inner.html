@@ -9,15 +9,16 @@
       <div class="d-flex justify-content-between align-items-center">
         <h2>Página de inserción de datos - Portafolio</h2>
         <ol>
-          <li><a href="index.html">home</a></li>
+          <li><a href="{% url 'index' %}">home</a></li>
           <li>inner</li>
         </ol>
       </div>
-
+      <div class="d-flex justify-content-between align-items-center">
+        <h4>¡Hola {{ user.username | upper}}, aqui puedes agregar proyectos al Portafolio!</h4>
+      </div>
     </div>
   </section>
   <!-- End Breadcrumbs -->
-
   <section class="inner-page">
     <div class="container">
       <form class="row g-3" action="" method="post">

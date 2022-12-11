@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title%}Registrarse{% endblock %}
+{% block customcss %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock %}
+{% block content %}
+<main class="form-signin w-100 m-auto text-center">
+  {% load crispy_forms_tags %}
+    <form class="" action="" method="post" novalidate>
+      {% csrf_token %}
+        <img class="mb-4" src="{% static 'img/python.png'%}" alt="" width="72" height="72">
+        {{ form | crispy }}
+        <h1 class="h3 mb-3 fw-normal">Registrarse</h1>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Registrarse</button>
+      </form>
+      <div>
+        <p class="fw-bold mb-0">¿Ya tienes una cuenta?</p>
+        <a href="" class="text-primary fw-bold mb-0">Iniciar sesion</a>
+    </div>
+    <p class="mt-5 mb-3 text-muted">&copy; 2022 - Todos los derechos reservados</p>
+    </main>
+{% endblock %}
