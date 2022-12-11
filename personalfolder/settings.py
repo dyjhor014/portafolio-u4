@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'personalfolder.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'personal_folder',
+        'NAME': 'railway',
         'USER': 'root',
-        'PASSWORD': 'asdfghjkl',
-        'HOST': 'localhost',
-        'PORT': '3306'
+        'PASSWORD': 'rK5s6i33AEP3CIiGbxIy',
+        'HOST': 'containers-us-west-167.railway.app',
+        'PORT': '5801'
     }
 }
 
