@@ -24,7 +24,7 @@ class IndexView(TemplateView):
 class Inner(TemplateView):
     def get(self, request):
         return render(request, "inner.html")
-
+    @csrf_exempt
     def post(self, request):
         photo = request.POST['photo']
         title = request.POST['title']
