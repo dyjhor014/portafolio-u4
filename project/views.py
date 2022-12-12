@@ -7,6 +7,7 @@ from django.utils import timezone
 from .forms import CustomUserCreationFrom
 from ipware import get_client_ip
 from django.contrib.auth import authenticate, login
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 class IndexView(TemplateView):
@@ -37,9 +38,11 @@ class Inner(TemplateView):
         return HttpResponse("No se han insertado datos")
 
 class Login(View):
+    @csrf_exempt
     def get(self, request):
         return render(request, "login.html")
 
+@csrf_exempt
 def registro(request):
     data = {
         'form': CustomUserCreationFrom
