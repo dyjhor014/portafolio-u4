@@ -11,7 +11,6 @@ from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 class IndexView(TemplateView):
-    @csrf_exempt
     def get(self, request):
         projects = Project.objects.all()
         context = {
@@ -23,10 +22,9 @@ class IndexView(TemplateView):
         return render(request, "index.html", context)
 
 class Inner(TemplateView):
-    @csrf_exempt
     def get(self, request):
         return render(request, "inner.html")
-    @csrf_exempt
+
     def post(self, request):
         photo = request.POST['photo']
         title = request.POST['title']
@@ -40,11 +38,10 @@ class Inner(TemplateView):
         return HttpResponse("No se han insertado datos")
 
 class Login(View):
-    @csrf_exempt
     def get(self, request):
         return render(request, "login.html")
 
-@csrf_exempt
+
 def registro(request):
     data = {
         'form': CustomUserCreationFrom
@@ -58,21 +55,21 @@ def registro(request):
             return redirect("index")
         data['form']=formulario
     return render(request, 'registration/registro.html', data)
-@csrf_exempt
+
 def project(request, id):
     project = Project.objects.get(id=id)
     context = {
             "project":project
         }
     return render(request, "projects.html", context)
-@csrf_exempt
+
 def update(request, id):
     project = Project.objects.get(id=id)
     context = {
     "project":project
     }
     return render(request, "update.html", context)
-@csrf_exempt
+
 def updated(request):
     id = request.POST['id']
     photo = request.POST['photo']
@@ -90,7 +87,7 @@ def updated(request):
         project.save()
         return redirect("index")
     return HttpResponse("No se han actualizado los datos")
-@csrf_exempt
+
 def eliminar(request, id):
     project = Project.objects.get(id=id)
     project.delete_at = timezone.now()
