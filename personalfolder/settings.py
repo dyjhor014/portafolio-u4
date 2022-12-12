@@ -37,11 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
-    'corsheaders',
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -51,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
-CSRF_TRUSTED_ORIGINS = ['https://portafolio-u4-production.up.railway.app/']
+CSRF_TRUSTED_ORIGINS = ['https://portafolio-u4-production.up.railway.app']
 
 ROOT_URLCONF = 'personalfolder.urls'
 
