@@ -6,6 +6,7 @@ from django.views.generic import TemplateView
 from django.utils import timezone
 from .forms import CustomUserCreationFrom
 from ipware import get_client_ip
+from django.contrib.auth import authenticate, login
 
 # Create your views here.
 class IndexView(TemplateView):
@@ -47,7 +48,9 @@ def registro(request):
         formulario = CustomUserCreationFrom(data=request.POST)
         if formulario.is_valid():
             formulario.save()
-            return redirect("login")
+            user = authenticate(username=formulario.cleaned_data["username"], password=formulario.cleaned_data["password1"])
+            login(request, user)
+            return redirect("index")
         data['form']=formulario
     return render(request, 'registration/registro.html', data)
 

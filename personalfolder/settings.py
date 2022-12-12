@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-qb-)&1f8l1p&aks&de$j_2stl%9eq0u4-+3+kq!&c2h^pq*r1b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['railway.app', '76.76.21.21', 'http://railway.app', 'portafolio-u4-production.up.railway.app'] 
+ALLOWED_HOSTS = ['*', 'portafolio-u4-production.up.railway.app'] 
 CSRF_TRUSTED_ORIGINS = ['https://portafolio-u4-production.up.railway.app/']
 
 # Application definition
@@ -73,7 +73,7 @@ WSGI_APPLICATION = 'personalfolder.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
+ 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -84,7 +84,16 @@ DATABASES = {
         'PORT': '5801'
     }
 }
-
+""" DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'personal_folder',
+        'USER': 'root',
+        'PASSWORD': 'asdfghjkl',
+        'HOST': 'localhost',
+        'PORT': '3306'
+    }
+} """
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
